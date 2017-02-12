@@ -46,7 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedMethods.cs" />
+    <Compile Include="Arrays.cs" />
+    <Compile Include="ClassesObjects.cs" />
+    <Compile Include="Controls.cs" />
+    <Compile Include="ExceptionHandling.cs" />
+    <Compile Include="FilesStreams.cs" />
+    <Compile Include="HandlingEvents.cs" />
+    <Compile Include="Inheritance.cs" />
+    <Compile Include="Linq.cs" />
+    <Compile Include="Looping.cs" />
     <Compile Include="MakingDecisions.cs" />
+    <Compile Include="Methods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -63,6 +63,7 @@ namespace textbook
                     break;
                 case "files and streams":
                     FilesStreams.main();
+                    break;
                 case "linq":
                     Linq.main();
                     break;
