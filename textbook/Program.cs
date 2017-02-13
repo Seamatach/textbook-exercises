@@ -32,40 +32,40 @@ namespace textbook
             switch (input)
             {
                 case "making decisions":
-                    MakingDecisions.main();
+                    MakingDecisions.index();
                     break;
                 case "looping":
-                    Looping.main();
+                    Looping.index();
                     break;
                 case "using arrays":
-                    Arrays.main();
+                    Arrays.index();
                     break;
                 case "using methods":
-                    Methods.main();
+                    Methods.index();
                     break;
                 case "advanced methods":
-                    AdvancedMethods.main();
+                    AdvancedMethods.index();
                     break;
                 case "using classes and objects":
-                    ClassesObjects.main();
+                    ClassesObjects.index();
                     break;
                 case "inheritance":
-                    Inheritance.main();
+                    Inheritance.index();
                     break;
                 case "exception handling":
-                    ExceptionHandling.main();
+                    ExceptionHandling.index();
                     break;
                 case "using controls":
-                    Controls.main();
+                    Controls.index();
                     break;
                 case "handling events":
-                    HandlingEvents.main();
+                    HandlingEvents.index();
                     break;
                 case "files and streams":
-                    FilesStreams.main();
+                    FilesStreams.index();
                     break;
                 case "linq":
-                    Linq.main();
+                    Linq.index();
                     break;
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");

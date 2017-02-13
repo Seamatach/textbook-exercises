@@ -8,7 +8,7 @@ namespace textbook
 {
     class ExceptionHandling
     {
-        public static void main()
+        public static void index()
         {
 
         }
