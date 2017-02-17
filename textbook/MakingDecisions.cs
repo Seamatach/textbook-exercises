@@ -16,11 +16,7 @@ namespace textbook
             Console.WriteLine("Please enter one of the following to ");
             Console.WriteLine("Number Guessing");
             Console.WriteLine("Rock Paper Scissors");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
+            Console.WriteLine("Lottery");
 
             string input = Console.ReadLine();
             input = input.ToLower();
@@ -31,6 +27,9 @@ namespace textbook
                     break;
                 case "rock paper scissors":
                     RockPaperScissors();
+                    break;
+                case "lottery":
+                    Lottery();
                     break;
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");
@@ -161,6 +160,56 @@ namespace textbook
                 Console.WriteLine("New game? (Y/N)");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
+            }
+        }
+
+        public static void Lottery()
+        {
+            bool keepPlaying = true;
+            int winnings;
+            while (keepPlaying)
+            {
+                Random random = new Random();
+                int lottery1 = random.Next(4) + 1;
+                int lottery2 = random.Next(4) + 1;
+                int lottery3 = random.Next(4) + 1;
+                int userGuess1;
+                int userGuess2;
+                int userGuess3;
+                int matches;
+
+                Console.WriteLine("Welcome to the Lottery Game.");
+                Console.WriteLine("Rules of the Lottery Game:");
+                Console.WriteLine("The computer guesses 3 random numbers between 1 and 4.");
+                Console.WriteLine("The player will attempt to guess the three numbers.");
+                Console.WriteLine("After all the guesses have been completed the computer will evaluate the guesses.");
+                Console.WriteLine("The scoring is evaluated as follows:");
+                Console.WriteLine("No matches = $0");
+                Console.WriteLine("Any one match = $10");
+                Console.WriteLine("Any two matching = $100");
+                Console.WriteLine("Three matching but not in the same order = $1,000");
+                Console.WriteLine("All three matching in order = $10,000");
+
+                Console.WriteLine("What is your first guess?");
+                userGuess1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is your second guess?");
+                userGuess2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is your third guess?");
+                userGuess3 = Convert.ToInt32(Console.ReadLine());
+
+                if (lottery1 == userGuess1 && lottery2 == userGuess2 && lottery3 == userGuess3 )
+                {
+                    winnings = 10000;
+                    Console.WriteLine("Congrats! You guess the correct numbers in the correct order. You have won $10,000!");
+                    break;
+                }
+
+
+                Console.WriteLine("New game? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepPlaying = cki.KeyChar == 'y';
+                
+
             }
         }
     }

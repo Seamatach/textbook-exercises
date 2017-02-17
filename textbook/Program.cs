@@ -13,7 +13,7 @@ namespace textbook
             Console.WriteLine("Welcome to my textbook exercise program!");
             Console.WriteLine("This program is broken down chapter by chapter and by exercise.");
             Console.WriteLine("Please select a chapter to go to the chapter page. The chapter page will have a list of available exercises.");
-            Console.WriteLine("Making decisions");
+            Console.WriteLine("Making Decisions");
             Console.WriteLine("Looping");
             Console.WriteLine("Using Arrays");
             Console.WriteLine("Using Methods");
@@ -25,6 +25,7 @@ namespace textbook
             Console.WriteLine("Handling Events");
             Console.WriteLine("Files and Streams");
             Console.WriteLine("LINQ");
+            Console.WriteLine();
             Console.WriteLine("To select a chapter please enter the chapter topic.");
 
             string input = Console.ReadLine();
