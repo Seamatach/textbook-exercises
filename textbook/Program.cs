@@ -15,13 +15,13 @@ namespace textbook
             Console.WriteLine("Please select a chapter to go to the chapter page. The chapter page will have a list of available exercises.");
             Console.WriteLine("Making Decisions");
             Console.WriteLine("Looping");
-            Console.WriteLine("Using Arrays");
-            Console.WriteLine("Using Methods");
+            Console.WriteLine("Arrays");
+            Console.WriteLine("Methods");
             Console.WriteLine("Advanced Methods");
-            Console.WriteLine("Using Classes and Objects");
+            Console.WriteLine("Classes and Objects");
             Console.WriteLine("Inheritance");
             Console.WriteLine("Exception Handling");
-            Console.WriteLine("Using Controls");
+            Console.WriteLine("Controls");
             Console.WriteLine("Handling Events");
             Console.WriteLine("Files and Streams");
             Console.WriteLine("LINQ");
@@ -38,16 +38,16 @@ namespace textbook
                 case "looping":
                     Looping.index();
                     break;
-                case "using arrays":
+                case "arrays":
                     Arrays.index();
                     break;
-                case "using methods":
+                case "methods":
                     Methods.index();
                     break;
                 case "advanced methods":
                     AdvancedMethods.index();
                     break;
-                case "using classes and objects":
+                case "classes and objects":
                     ClassesObjects.index();
                     break;
                 case "inheritance":
@@ -56,7 +56,7 @@ namespace textbook
                 case "exception handling":
                     ExceptionHandling.index();
                     break;
-                case "using controls":
+                case "controls":
                     Controls.index();
                     break;
                 case "handling events":

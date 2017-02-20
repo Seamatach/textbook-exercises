@@ -11,9 +11,9 @@ namespace textbook
     {
         public static void index()
         {
-            Console.WriteLine("Welcome to the Chapter on Making Decisions.");
+            Console.WriteLine("Welcome to the chapter on making decisions.");
             Console.WriteLine("Enter the exercise name to begin an exercise program.");
-            Console.WriteLine("Please enter one of the following to ");
+            Console.WriteLine("Please enter one of the following to:");
             Console.WriteLine("Number Guessing");
             Console.WriteLine("Rock Paper Scissors");
             Console.WriteLine("Lottery");
@@ -166,7 +166,8 @@ namespace textbook
         public static void Lottery()
         {
             bool keepPlaying = true;
-            int winnings;
+            int winnings = 0;
+
             while (keepPlaying)
             {
                 Random random = new Random();
@@ -176,7 +177,8 @@ namespace textbook
                 int userGuess1;
                 int userGuess2;
                 int userGuess3;
-                int matches;
+                int numOfWins = 0;
+                int money = 0;
 
                 Console.WriteLine("Welcome to the Lottery Game.");
                 Console.WriteLine("Rules of the Lottery Game:");
@@ -197,19 +199,52 @@ namespace textbook
                 Console.WriteLine("What is your third guess?");
                 userGuess3 = Convert.ToInt32(Console.ReadLine());
 
+                if (lottery1 == userGuess1 || lottery1 == userGuess2 || lottery1 == userGuess3)
+                {
+                    numOfWins++;
+                }
+                if (lottery2 == userGuess1 || lottery2 == userGuess2 || lottery2 == userGuess3)
+                {
+                    numOfWins++;
+                }
+                if (lottery3 == userGuess1 || lottery3 == userGuess2 || lottery3 == userGuess3)
+                {
+                    numOfWins++;
+                }
                 if (lottery1 == userGuess1 && lottery2 == userGuess2 && lottery3 == userGuess3 )
                 {
-                    winnings = 10000;
-                    Console.WriteLine("Congrats! You guess the correct numbers in the correct order. You have won $10,000!");
-                    break;
+                    numOfWins++;
                 }
 
-
+                if (numOfWins == 1)
+                {
+                    Console.WriteLine("Congrats! You picked a match. You won $10.");
+                    money = money + 10;
+                }
+                else if (numOfWins == 2)
+                {
+                    Console.WriteLine("Congrats! You picked two matches. You won $100.");
+                    money = money + 100;
+                }
+                else if (numOfWins == 3)
+                {
+                    Console.WriteLine("Congrats! You picked three matches. You won $1,000.");
+                    money = money + 1000;
+                }
+                else if (numOfWins == 4)
+                {
+                    Console.WriteLine("Congrats! You picked three matches. You won $10,000.");
+                    money = money + 10000;
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry. You didn't get any matches. You didn't win anything.");
+                }
+                winnings = winnings + money;
+                Console.WriteLine("Your winning total is ${0}.", winnings);
                 Console.WriteLine("New game? (Y/N)");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
-                
-
             }
         }
     }
