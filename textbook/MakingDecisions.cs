@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* This cs page is on making simple decisions in c# using if else and switch statements.
+ * The navigation is using a switch statement to know which exercise to run.
+ * Each exercise using a simple while loop to run the game again, and if else statements for the games logic.
+ * I have created a simple number guessing game, Rock Paper Scissors game, and a Simple Lottery game.
+ */
+ 
+ using System;
 using System.Diagnostics;
 
 namespace textbook

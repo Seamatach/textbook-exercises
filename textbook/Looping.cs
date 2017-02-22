@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* This cs page is on loops. There are again several small projects that focus on using looping as a key logic component of the program.
+ * The navigation is using a switch statement to know which exercise to run.
+ * 
+ * 
+ */
+
+using System;
 
 namespace textbook
 {
@@ -75,7 +77,7 @@ namespace textbook
                     while (char.IsLower(input) == true)
                     {
                         Console.WriteLine("OK");
-                        CheckLower();
+                        CheckLower() ;
                     }
                 }
                 break;

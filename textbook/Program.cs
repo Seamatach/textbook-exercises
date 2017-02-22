@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* This program is an exercise test in making various exercise examples of small C# programs.
+ * These exercises are from Visual C# 2012: An Introduction to Object-Oriented Programming by Joyce Farrell.
+ * This cs page is where the program starts and where the user decides what set of exercises to experience and test.
+ * These are all simple games or tools.
+ */
+
+using System;
 
 namespace textbook
 {
