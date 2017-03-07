@@ -1,7 +1,5 @@
 ﻿/* This cs page is on loops. There are again several small projects that focus on using looping as a key logic component of the program.
- * The navigation is using a switch statement to know which exercise to run.
- * 
- * 
+ * In line documentation is presented before the method and where it will be relevant.
  */
 
 using System;
@@ -10,6 +8,9 @@ namespace textbook
 {
     class Looping
     {
+        /// <summary>
+        /// This is the class specific main function for my programs. They are simple switch statements to direct the user to the right mini program.
+        /// </summary>
         public static void index()
         {
             Console.WriteLine("Welcome to the chapter on looping.");
@@ -17,7 +18,7 @@ namespace textbook
             Console.WriteLine("Please enter one of the following to:");
             Console.WriteLine("Adding Doubles");
             Console.WriteLine("Check Lower");
-            //Console.WriteLine("Lottery");
+            Console.WriteLine("Average Calc");
 
             string input = Console.ReadLine();
             input = input.ToLower();
@@ -29,15 +30,18 @@ namespace textbook
                 case "check lower":
                     CheckLower();
                     break;
-                //case "lottery":
-                //    Lottery();
-                //    break;
+                case "average calc":
+                    AverageCalc();
+                    break;
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");
                     break;
             }
         }
 
+        /// <summary>
+        /// This is a simple adding calculator. I have a while loop to allow another set of additions or to exit the app, and a simple while loop statement as the logic of the calculator.
+        /// </summary>
         public static void AddingDoubles()
         {
             bool keepPlaying = true;
@@ -63,6 +67,9 @@ namespace textbook
             }
         }
 
+        /// <summary>
+        /// This is a simple app to verify a lower case letter has been typed. I have a while loop to allow another letter to be verified or to exit the app, and two simple while loop statements as the logic of the app.
+        /// </summary>
         public static void CheckLower()
         {
             bool keepGoing = true;
@@ -89,6 +96,14 @@ namespace textbook
                 keepGoing = cki.KeyChar == 'y';
 
             }
+        }
+
+        /// <summary>
+        /// This is a simple app to average a set of provided values. I have a while loop to begin again or to exit the app, and 
+        /// </summary>
+        public static void AverageCalc()
+        {
+            
         }
     }
 }

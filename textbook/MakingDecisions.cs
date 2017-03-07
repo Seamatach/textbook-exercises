@@ -1,16 +1,18 @@
 ﻿/* This cs page is on making simple decisions in c# using if else and switch statements.
- * The navigation is using a switch statement to know which exercise to run.
+ * In line documentation is presented before the method and where it will be relevant.
  * Each exercise using a simple while loop to run the game again, and if else statements for the games logic.
- * I have created a simple number guessing game, Rock Paper Scissors game, and a Simple Lottery game.
  */
- 
- using System;
+
+using System;
 using System.Diagnostics;
 
 namespace textbook
 {
     class MakingDecisions
     {
+        /// <summary>
+        /// This is the class specific main function for my programs. They are simple switch statements to direct the user to the right mini program.
+        /// </summary>
         public static void index()
         {
             Console.WriteLine("Welcome to the chapter on making decisions.");
@@ -39,6 +41,9 @@ namespace textbook
             }
         }
 
+        /// <summary>
+        /// This is a simple game of guess the number. I have a while loop to allow multiple games and a simple if else-if else statement as the logic of the game.
+        /// </summary>
         public static void NumberGuess()
         {
             bool keepPlaying = true;
@@ -74,6 +79,9 @@ namespace textbook
             }
         }
 
+        /// <summary>
+        /// This is a game of Rock, Paper, Scissors. I have a while loop to allow multiple games and nested else if statements as the logic of the game.
+        /// </summary>
         public static void RockPaperScissors()
         {
             bool keepPlaying = true;
@@ -165,6 +173,9 @@ namespace textbook
             }
         }
 
+        /// <summary>
+        /// This is a Lottery game. I have a while loop to allow multiple games and a set of if statements to evaluate the guesses to the randoms, and an else if statement to determine prizes.
+        /// </summary>
         public static void Lottery()
         {
             bool keepPlaying = true;

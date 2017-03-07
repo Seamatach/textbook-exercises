@@ -1,7 +1,7 @@
 ﻿/* This program is an exercise test in making various exercise examples of small C# programs.
  * These exercises are from Visual C# 2012: An Introduction to Object-Oriented Programming by Joyce Farrell.
  * This cs page is where the program starts and where the user decides what set of exercises to experience and test.
- * These are all simple games or tools.
+ * This cs page is the only one with a main method. All others have an index method of the class that works as that pages main method.
  */
 
 using System;
@@ -10,6 +10,10 @@ namespace textbook
 {
     class Program
     {
+        /// <summary>
+        /// This is the Program main entry point. It will direct you to the other pages to begin various exercises.
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to my textbook exercise program!");
