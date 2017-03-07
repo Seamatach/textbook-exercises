@@ -16,8 +16,8 @@ namespace textbook
             Console.WriteLine("Enter the exercise name to begin an exercise program.");
             Console.WriteLine("Please enter one of the following to:");
             Console.WriteLine("Adding Doubles");
-            Console.WriteLine("Rock Paper Scissors");
-            Console.WriteLine("Lottery");
+            Console.WriteLine("Check Lower");
+            //Console.WriteLine("Lottery");
 
             string input = Console.ReadLine();
             input = input.ToLower();
@@ -26,9 +26,9 @@ namespace textbook
                 case "adding doubles":
                     AddingDoubles();
                     break;
-                //case "rock paper scissors":
-                //    RockPaperScissors();
-                //    break;
+                case "check lower":
+                    CheckLower();
+                    break;
                 //case "lottery":
                 //    Lottery();
                 //    break;
@@ -65,22 +65,29 @@ namespace textbook
 
         public static void CheckLower()
         {
-            char input;
-
-            Console.WriteLine("Enter a letter please.");
-            Console.WriteLine("If its a lower case letter, you will receive an OK!");
-            input = Convert.ToChar(Console.ReadKey());
-            while (input != '!')
+            bool keepGoing = true;
+            while (keepGoing)
             {
-                while (char.IsLower(input) == false)
+                string input;
+
+                Console.WriteLine("Enter a letter please.");
+                Console.WriteLine("If its a lower case letter, you will receive an OK!");
+                input = Console.ReadLine();
+                char verify = Convert.ToChar(input);
+                while (char.IsLower(verify) == true)
                 {
-                    while (char.IsLower(input) == true)
-                    {
-                        Console.WriteLine("OK");
-                        CheckLower() ;
-                    }
+                    Console.WriteLine("OK! You entered a lower case character!");
+                    break;
                 }
-                break;
+                while (char.IsLower(verify) == false)
+                {
+                    Console.WriteLine("You did not enter a lowercase letter. Try again.");
+                    break;
+                }
+                Console.WriteLine("Do you want to start again? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepGoing = cki.KeyChar == 'y';
+
             }
         }
     }
