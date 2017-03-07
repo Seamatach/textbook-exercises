@@ -8,7 +8,7 @@ namespace textbook
 {
     class HandlingEvents
     {
-        public static void main()
+        public static void index()
         {
 
         }
