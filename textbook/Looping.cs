@@ -24,8 +24,8 @@ namespace textbook
             input = input.ToLower();
             switch (input)
             {
-                case "adding doubles":
-                    AddingDoubles();
+                case "adding calc":
+                    AddingCalc();
                     break;
                 case "check lower":
                     CheckLower();
@@ -42,7 +42,7 @@ namespace textbook
         /// <summary>
         /// This is a simple adding calculator. I have a while loop to allow another set of additions or to exit the app, and a simple while loop statement as the logic of the calculator.
         /// </summary>
-        public static void AddingDoubles()
+        public static void AddingCalc()
         {
             bool keepPlaying = true;
             while (keepPlaying)
@@ -103,7 +103,38 @@ namespace textbook
         /// </summary>
         public static void AverageCalc()
         {
-            
+            int totalValues = 0;
+            int values;
+            int count = 0;
+            int average;
+            string input;
+
+            Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
+            input = Console.ReadLine();
+            values = Convert.ToInt32(input);
+            count = ++count;
+            totalValues += values;
+
+            while (input != "999")
+            {
+                Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 850. Enter 999 to exit.");
+                input = Console.ReadLine();
+                values = Convert.ToInt32(input);
+                count = ++count;
+                totalValues += values;
+
+                while (values < 300 || values > 900)
+                {
+                    Console.WriteLine("Invalid value. Please enter a valid value.");
+                    input = Console.ReadLine();
+                    values = Convert.ToInt32(input);
+                    count = ++count;
+                    totalValues += values;
+                }
+            }
+
+            average = totalValues/count;
+            Console.WriteLine("The average of all {0} scores is {1}.", count, average);
         }
     }
 }
