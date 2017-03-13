@@ -104,37 +104,33 @@ namespace textbook
         public static void AverageCalc()
         {
             int totalValues = 0;
-            int values;
+            int values, average;
             int count = 0;
-            int average;
+            string sentinal = "999";
+            int min = 300;
+            int max = 900;
             string input;
 
-            Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
-            input = Console.ReadLine();
-            values = Convert.ToInt32(input);
-            count = ++count;
-            totalValues += values;
-
-            while (input != "999")
+            while (input != sentinal)
             {
-                Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 850. Enter 999 to exit.");
+                Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
                 input = Console.ReadLine();
                 values = Convert.ToInt32(input);
-                count = ++count;
-                totalValues += values;
 
-                while (values < 300 || values > 900)
+                while (values >= min || values <= max)
                 {
-                    Console.WriteLine("Invalid value. Please enter a valid value.");
+                    Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
                     input = Console.ReadLine();
                     values = Convert.ToInt32(input);
                     count = ++count;
                     totalValues += values;
                 }
+                Console.WriteLine("Invalid value. Please enter a valid value.");
+                input = Console.ReadLine();
+                values = Convert.ToInt32(input);
             }
-
-            average = totalValues/count;
-            Console.WriteLine("The average of all {0} scores is {1}.", count, average);
+            average = totalValues / count;
+            Console.WriteLine("You have entered {0} numbers. Your average is {1}.", count, average);
         }
     }
 }
