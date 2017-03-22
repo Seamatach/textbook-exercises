@@ -94,7 +94,6 @@ namespace textbook
                 Console.WriteLine("Do you want to start again? (Y/N)");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepGoing = cki.KeyChar == 'y';
-
             }
         }
 
@@ -103,34 +102,52 @@ namespace textbook
         /// </summary>
         public static void AverageCalc()
         {
-            int totalValues = 0;
-            int values, average;
-            int count = 0;
-            string sentinal = "999";
-            int min = 300;
-            int max = 900;
-            string input;
-
-            while (input != sentinal)
+            bool keepGoing = true;
+            while (keepGoing)
             {
-                Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
+                int totalValues = 0;
+                int values, average;
+                int count = 0;
+                string sentinal = "999";
+                int min = 300;
+                int max = 900;
+                string input;
+
+                Console.WriteLine(
+                    "This calculator will accept any number of numeric values within the range of 300 and 900. Once the exit command is given of 999, it will calculate the average and display it.");
+                Console.WriteLine("Please enter the first value.");
                 input = Console.ReadLine();
                 values = Convert.ToInt32(input);
+                count = ++count;
 
-                while (values >= min || values <= max)
+                while (input != sentinal)
                 {
-                    Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
+                    Console.WriteLine("Enter a valid value or 999 to exit.");
                     input = Console.ReadLine();
                     values = Convert.ToInt32(input);
-                    count = ++count;
-                    totalValues += values;
+
+                    if (values >= min && values <= max)
+                    {
+                        Console.WriteLine(
+                            "Enter another valid value or 999 to exit.");
+                        input = Console.ReadLine();
+                        values = Convert.ToInt32(input);
+                        count = ++count;
+                        totalValues += values;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid value. Please enter a valid value.");
+                    }
+                    
                 }
-                Console.WriteLine("Invalid value. Please enter a valid value.");
-                input = Console.ReadLine();
-                values = Convert.ToInt32(input);
+                average = totalValues/count;
+                Console.WriteLine("You have entered {0} numbers. Your average is {1}.", count, average);
+
+                Console.WriteLine("Do you want to start again? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepGoing = cki.KeyChar == 'y';
             }
-            average = totalValues / count;
-            Console.WriteLine("You have entered {0} numbers. Your average is {1}.", count, average);
         }
     }
 }
