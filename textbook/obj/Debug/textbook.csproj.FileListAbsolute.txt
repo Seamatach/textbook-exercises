@@ -1,6 +1,0 @@
-C:\Git\textbook-exercises\textbook\bin\Debug\textbook.exe.config
-C:\Git\textbook-exercises\textbook\obj\Debug\textbook.csprojResolveAssemblyReference.cache
-C:\Git\textbook-exercises\textbook\bin\Debug\textbook.exe
-C:\Git\textbook-exercises\textbook\bin\Debug\textbook.pdb
-C:\Git\textbook-exercises\textbook\obj\Debug\textbook.exe
-C:\Git\textbook-exercises\textbook\obj\Debug\textbook.pdb
