@@ -119,6 +119,7 @@ namespace textbook
                 input = Console.ReadLine();
                 values = Convert.ToInt32(input);
                 count = ++count;
+                totalValues += values;
 
                 while (input != sentinal)
                 {
@@ -128,10 +129,6 @@ namespace textbook
 
                     if (values >= min && values <= max)
                     {
-                        Console.WriteLine(
-                            "Enter another valid value or 999 to exit.");
-                        input = Console.ReadLine();
-                        values = Convert.ToInt32(input);
                         count = ++count;
                         totalValues += values;
                     }
@@ -147,6 +144,24 @@ namespace textbook
                 Console.WriteLine("Do you want to start again? (Y/N)");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepGoing = cki.KeyChar == 'y';
+            }
+        }
+
+        /// <summary>
+        /// Exercise is to track the amount earned by the families (a, b, and c) and to return the amount each family has earned and a grand total for the sale.
+        /// </summary>
+        public static void YardSale()
+        {
+            bool keepGoing = true;
+            while (keepGoing)
+            {
+                int famA, famB, famC, total;
+                string a = "a", b = "b", c = "c";
+                
+                Console.WriteLine("Welcome to the Yare Sale! Please pick a family to track a sale.");
+                Console.WriteLine("Are you tracking a sale with Family A, B, or C. If you are done added sales type Z.");
+                string input = Console.ReadLine();
+                input = input.ToLower();
             }
         }
     }
