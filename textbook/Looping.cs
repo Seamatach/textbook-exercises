@@ -19,6 +19,7 @@ namespace textbook
             Console.WriteLine("Adding Doubles");
             Console.WriteLine("Check Lower");
             Console.WriteLine("Average Calc");
+            Console.WriteLine("Yard sale");
 
             string input = Console.ReadLine();
             input = input.ToLower();
@@ -33,9 +34,14 @@ namespace textbook
                 case "average calc":
                     AverageCalc();
                     break;
+                case "yard sale":
+                    YardSale();
+                    break;
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");
                     break;
+                    
+                    // Need to add an exit option here and at all menus in all classes.
             }
         }
 
@@ -94,7 +100,6 @@ namespace textbook
                 Console.WriteLine("Do you want to start again? (Y/N)");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepGoing = cki.KeyChar == 'y';
-
             }
         }
 
@@ -103,38 +108,103 @@ namespace textbook
         /// </summary>
         public static void AverageCalc()
         {
-            int totalValues = 0;
-            int values;
-            int count = 0;
-            int average;
-            string input;
-
-            Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 900. Enter 999 to exit.");
-            input = Console.ReadLine();
-            values = Convert.ToInt32(input);
-            count = ++count;
-            totalValues += values;
-
-            while (input != "999")
+            bool keepGoing = true;
+            while (keepGoing)
             {
-                Console.WriteLine("Enter a valid value to determine the average. Valid values are between 300 and 850. Enter 999 to exit.");
+                int totalValues = 0;
+                int values, average;
+                int count = 0;
+                string sentinal = "999";
+                int min = 300;
+                int max = 900;
+                string input;
+
+                Console.WriteLine(
+                    "This calculator will accept any number of numeric values within the range of 300 and 900. Once the exit command is given of 999, it will calculate the average and display it.");
+                Console.WriteLine("Please enter the first value.");
                 input = Console.ReadLine();
                 values = Convert.ToInt32(input);
                 count = ++count;
                 totalValues += values;
 
-                while (values < 300 || values > 900)
+                while (input != sentinal)
                 {
-                    Console.WriteLine("Invalid value. Please enter a valid value.");
+                    Console.WriteLine("Enter a valid value or 999 to exit.");
                     input = Console.ReadLine();
                     values = Convert.ToInt32(input);
-                    count = ++count;
-                    totalValues += values;
-                }
-            }
 
-            average = totalValues/count;
-            Console.WriteLine("The average of all {0} scores is {1}.", count, average);
+                    if (values >= min && values <= max)
+                    {
+                        count = ++count;
+                        totalValues += values;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid value. Please enter a valid value.");
+                    }
+                    
+                }
+                average = totalValues/count;
+                Console.WriteLine("You have entered {0} numbers. Your average is {1}.", count, average);
+
+                Console.WriteLine("Do you want to start again? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepGoing = cki.KeyChar == 'y';
+            }
+        }
+
+        /// <summary>
+        /// Exercise is to track the amount earned by the families (a, b, and c) and to return the amount each family has earned and a grand total for the sale.
+        /// </summary>
+        public static void YardSale()
+        {
+            bool keepGoing = true;
+            while (keepGoing)
+            {
+                int famA = 0;
+                int famB = 0;
+                int famC = 0;
+                int total = 0;
+                string a = "a", b = "b", c = "c", exit = "exit";
+                string sale;
+                string input = "";
+
+                while (input != exit)
+                {
+                    Console.WriteLine("Welcome to the Yard Sale! Please pick a family to track a sale.");
+                    Console.WriteLine("Are you tracking a sale with Family A, B, or C. If you are done added sales type Exit.");
+                    input = Console.ReadLine();
+                    input = input.ToLower();
+
+                    if (input == a)
+                    {
+                        Console.WriteLine("How much did Family A sell?");
+                        sale = Console.ReadLine();
+                        int addA = Convert.ToInt32(sale);
+                        famA = famA + addA;
+                    }
+                    if (input == b)
+                    {
+                        Console.WriteLine("How much did Family B sell?");
+                        sale = Console.ReadLine();
+                        int addB = Convert.ToInt32(sale);
+                        famB = famB + addB;
+                    }
+                    if (input == c)
+                    {
+                        Console.WriteLine("How much did Family A sell?");
+                        sale = Console.ReadLine();
+                        int addC = Convert.ToInt32(sale);
+                        famC = famC + addC;
+                    }
+                }
+                total = famA + famB + famC;
+                Console.WriteLine($"The total sold by the families was {total}.");
+                
+                Console.WriteLine("Do you want to start again? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepGoing = cki.KeyChar == 'y';
+            }
         }
     }
 }
