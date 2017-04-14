@@ -38,6 +38,8 @@ namespace textbook
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");
                    break;
+
+                    // Need to add an exit option here and at all menus in all classes.
             }
         }
 

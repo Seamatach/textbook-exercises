@@ -19,6 +19,7 @@ namespace textbook
             Console.WriteLine("Adding Doubles");
             Console.WriteLine("Check Lower");
             Console.WriteLine("Average Calc");
+            Console.WriteLine("Yard sale");
 
             string input = Console.ReadLine();
             input = input.ToLower();
@@ -33,9 +34,14 @@ namespace textbook
                 case "average calc":
                     AverageCalc();
                     break;
+                case "yard sale":
+                    YardSale();
+                    break;
                 default:
                     Console.WriteLine("This is not a valid selection. Please try again.");
                     break;
+                    
+                    // Need to add an exit option here and at all menus in all classes.
             }
         }
 
@@ -155,13 +161,49 @@ namespace textbook
             bool keepGoing = true;
             while (keepGoing)
             {
-                int famA, famB, famC, total;
-                string a = "a", b = "b", c = "c";
+                int famA = 0;
+                int famB = 0;
+                int famC = 0;
+                int total = 0;
+                string a = "a", b = "b", c = "c", exit = "exit";
+                string sale;
+                string input = "";
+
+                while (input != exit)
+                {
+                    Console.WriteLine("Welcome to the Yard Sale! Please pick a family to track a sale.");
+                    Console.WriteLine("Are you tracking a sale with Family A, B, or C. If you are done added sales type Exit.");
+                    input = Console.ReadLine();
+                    input = input.ToLower();
+
+                    if (input == a)
+                    {
+                        Console.WriteLine("How much did Family A sell?");
+                        sale = Console.ReadLine();
+                        int addA = Convert.ToInt32(sale);
+                        famA = famA + addA;
+                    }
+                    if (input == b)
+                    {
+                        Console.WriteLine("How much did Family B sell?");
+                        sale = Console.ReadLine();
+                        int addB = Convert.ToInt32(sale);
+                        famB = famB + addB;
+                    }
+                    if (input == c)
+                    {
+                        Console.WriteLine("How much did Family A sell?");
+                        sale = Console.ReadLine();
+                        int addC = Convert.ToInt32(sale);
+                        famC = famC + addC;
+                    }
+                }
+                total = famA + famB + famC;
+                Console.WriteLine($"The total sold by the families was {total}.");
                 
-                Console.WriteLine("Welcome to the Yare Sale! Please pick a family to track a sale.");
-                Console.WriteLine("Are you tracking a sale with Family A, B, or C. If you are done added sales type Z.");
-                string input = Console.ReadLine();
-                input = input.ToLower();
+                Console.WriteLine("Do you want to start again? (Y/N)");
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+                keepGoing = cki.KeyChar == 'y';
             }
         }
     }
