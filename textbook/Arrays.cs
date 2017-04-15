@@ -25,9 +25,9 @@ namespace textbook
                 case "array operations":
                     IntArray();
                     break;
-                //case "tips list":
-                //    TipsList();
-                //    break;
+                case "tips list":
+                    TipsList();
+                    break;
                 //case "average calc":
                 //    AverageCalc();
                 //    break;
@@ -95,8 +95,32 @@ namespace textbook
             bool keepPlaying = true;
             while (keepPlaying)
             {
+                string input = "";
+                int[] TipsList = new int[7];
+                string[] Days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+                Console.WriteLine("Please enter your tips for the day starting with Sunday and ending with Saturday.");
 
+                for (int i = 0; i < 7; i++)
+                {
+                    TipsList[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                double a = 0;
+                double b = 0;
+                double c = 0;
+                for (int i = 0; i < 7; i++)
+                {
+                    a = a + TipsList[i];
+                    b = a/7;
+                    b = Math.Floor(b);
+                }
+                Console.WriteLine(b);
 
+                for (int i = 0; i < 7; i++)
+                {
+                    c = TipsList[i] - b;
+                    Console.WriteLine($"The tip for {Days[i]} was ${TipsList[i]} and it is ${c} away from the average of ${b}.");
+                }
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
