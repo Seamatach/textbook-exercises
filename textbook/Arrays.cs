@@ -13,9 +13,9 @@ namespace textbook
             Console.WriteLine("Welcome to the chapter on arrays.");
             Console.WriteLine("Enter the exercise name to begin an exercise program.");
             Console.WriteLine("Please enter one of the following to:");
-            Console.WriteLine("array operations");
-            //Console.WriteLine("Tips List");
-            //Console.WriteLine("Average Calc");
+            Console.WriteLine("Array Operations");
+            Console.WriteLine("Tips List");
+            Console.WriteLine("Compare Scores");
             //Console.WriteLine("Yard sale");
 
             string input = Console.ReadLine();
@@ -25,12 +25,12 @@ namespace textbook
                 case "array operations":
                     IntArray();
                     break;
-                //case "tips list":
-                //    TipsList();
-                //    break;
-                //case "average calc":
-                //    AverageCalc();
-                //    break;
+                case "tips list":
+                    TipsList();
+                    break;
+                case "compare scores":
+                    CompareScores();
+                    break;
                 //case "yard sale":
                 //    YardSale();
                 //    break;
@@ -84,7 +84,7 @@ namespace textbook
                     view = view - 1;
                     Console.WriteLine(numbers[view]);
                 }
-                Console.WriteLine("Keep going?");
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
@@ -95,35 +95,107 @@ namespace textbook
             bool keepPlaying = true;
             while (keepPlaying)
             {
+                string input = "";
+                int[] TipsList = new int[7];
+                string[] Days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+                Console.WriteLine("Please enter your tips for the day starting with Sunday and ending with Saturday.");
 
+                for (int i = 0; i < 7; i++)
+                {
+                    TipsList[i] = Convert.ToInt32(Console.ReadLine());
+                }
 
+                double a = 0;
+                double b = 0;
+                double c = 0;
+
+                for (int i = 0; i < 7; i++)
+                {
+                    a = a + TipsList[i];
+                    b = a/7;
+                    b = Math.Floor(b);
+                }
+                Console.WriteLine(b);
+
+                for (var i = 0; i < 7; i++)
+                {
+                    c = TipsList[i] - b;
+                    Console.WriteLine($"The tip for {Days[i]} was ${TipsList[i]} and it is ${c} away from the average of ${b}.");
+                }
+
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
         }
 
-        public static void Array3()
+        public static void CompareScores()
         {
             bool keepPlaying = true;
             while (keepPlaying)
             {
+                string input = "";
+                int[] scores = new int[4];
+                Console.WriteLine("Please enter your scores.");
 
+                for (int i = 0; i < 4; i++)
+                {
+                    scores[i] = Convert.ToInt32(Console.ReadLine());
+                }
 
+                if (scores[0] < scores[1] && scores[1] < scores[2] && scores[2] < scores[3])
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine("Your scores are improving! Keep up the good work!");
+                }
+
+                else if (scores[0] > scores[1] && scores[1] > scores[2] && scores[2] > scores[3])
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine(
+                        "Your scores are not improving. We need to get your scores to look more like this:");
+                    Array.Reverse(scores);
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+                }
+
+                else
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine("Your scores are not showing a pattern at all. ");
+                }
+
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
         }
 
-        public static void Array4()
-        {
-            bool keepPlaying = true;
-            while (keepPlaying)
-            {
+        //public static void Array4()
+        //{
+        //    bool keepPlaying = true;
+        //    while (keepPlaying)
+        //    {
 
 
-                ConsoleKeyInfo cki = Console.ReadKey(true);
-                keepPlaying = cki.KeyChar == 'y';
-            }
-        }
+        //        ConsoleKeyInfo cki = Console.ReadKey(true);
+        //        keepPlaying = cki.KeyChar == 'y';
+        //    }
+        //}
     }
 }
