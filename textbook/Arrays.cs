@@ -15,7 +15,7 @@ namespace textbook
             Console.WriteLine("Please enter one of the following to:");
             Console.WriteLine("Array Operations");
             Console.WriteLine("Tips List");
-            //Console.WriteLine("Compare Scores");
+            Console.WriteLine("Compare Scores");
             //Console.WriteLine("Yard sale");
 
             string input = Console.ReadLine();
@@ -84,7 +84,7 @@ namespace textbook
                     view = view - 1;
                     Console.WriteLine(numbers[view]);
                 }
-                Console.WriteLine("Keep going?");
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
@@ -117,7 +117,7 @@ namespace textbook
                 }
                 Console.WriteLine(b);
 
-                for (int i = 0; i < 7; i++)
+                for (var i = 0; i < 7; i++)
                 {
                     c = TipsList[i] - b;
                     Console.WriteLine($"The tip for {Days[i]} was ${TipsList[i]} and it is ${c} away from the average of ${b}.");
@@ -134,23 +134,68 @@ namespace textbook
             bool keepPlaying = true;
             while (keepPlaying)
             {
+                string input = "";
+                int[] scores = new int[4];
+                Console.WriteLine("Please enter your scores.");
 
+                for (int i = 0; i < 4; i++)
+                {
+                    scores[i] = Convert.ToInt32(Console.ReadLine());
+                }
 
+                if (scores[0] < scores[1] && scores[1] < scores[2] && scores[2] < scores[3])
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine("Your scores are improving! Keep up the good work!");
+                }
+
+                else if (scores[0] > scores[1] && scores[1] > scores[2] && scores[2] > scores[3])
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine(
+                        "Your scores are not improving. We need to get your scores to look more like this:");
+                    Array.Reverse(scores);
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+                }
+
+                else
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Write($"{i + 1}. {scores[i]} ");
+                    }
+
+                    Console.WriteLine("Your scores are not showing a pattern at all. ");
+                }
+
+                Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
         }
 
-        public static void Array4()
-        {
-            bool keepPlaying = true;
-            while (keepPlaying)
-            {
+        //public static void Array4()
+        //{
+        //    bool keepPlaying = true;
+        //    while (keepPlaying)
+        //    {
 
 
-                ConsoleKeyInfo cki = Console.ReadKey(true);
-                keepPlaying = cki.KeyChar == 'y';
-            }
-        }
+        //        ConsoleKeyInfo cki = Console.ReadKey(true);
+        //        keepPlaying = cki.KeyChar == 'y';
+        //    }
+        //}
     }
 }
