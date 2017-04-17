@@ -13,9 +13,9 @@ namespace textbook
             Console.WriteLine("Welcome to the chapter on arrays.");
             Console.WriteLine("Enter the exercise name to begin an exercise program.");
             Console.WriteLine("Please enter one of the following to:");
-            Console.WriteLine("array operations");
-            //Console.WriteLine("Tips List");
-            //Console.WriteLine("Average Calc");
+            Console.WriteLine("Array Operations");
+            Console.WriteLine("Tips List");
+            //Console.WriteLine("Compare Scores");
             //Console.WriteLine("Yard sale");
 
             string input = Console.ReadLine();
@@ -28,9 +28,9 @@ namespace textbook
                 case "tips list":
                     TipsList();
                     break;
-                //case "average calc":
-                //    AverageCalc();
-                //    break;
+                case "compare scores":
+                    CompareScores();
+                    break;
                 //case "yard sale":
                 //    YardSale();
                 //    break;
@@ -104,9 +104,11 @@ namespace textbook
                 {
                     TipsList[i] = Convert.ToInt32(Console.ReadLine());
                 }
+
                 double a = 0;
                 double b = 0;
                 double c = 0;
+
                 for (int i = 0; i < 7; i++)
                 {
                     a = a + TipsList[i];
@@ -120,13 +122,14 @@ namespace textbook
                     c = TipsList[i] - b;
                     Console.WriteLine($"The tip for {Days[i]} was ${TipsList[i]} and it is ${c} away from the average of ${b}.");
                 }
+
                 Console.WriteLine("Press \"y\" to keep going?");
                 ConsoleKeyInfo cki = Console.ReadKey(true);
                 keepPlaying = cki.KeyChar == 'y';
             }
         }
 
-        public static void Array3()
+        public static void CompareScores()
         {
             bool keepPlaying = true;
             while (keepPlaying)
