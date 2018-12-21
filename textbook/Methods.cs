@@ -70,7 +70,7 @@ namespace textbook
                 keepPlaying = cki.KeyChar == 'y';
             }
         }
-
+         
         public static void DisplayCompanyName()
         {
             Console.Write("C# Software Developers");
